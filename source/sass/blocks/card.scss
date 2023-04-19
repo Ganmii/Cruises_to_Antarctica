@@ -1,0 +1,154 @@
+.card {
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    display: block;
+    padding-bottom: 148.5%;
+
+    @include vp-1023 {
+      padding-bottom: 125%;
+    }
+
+    @include vp-767 {
+      padding-bottom: 143%;
+    }
+  }
+
+  &:hover {
+    & .card__description {
+      z-index: auto;
+      background-color: $color-tangaroa;
+    }
+  }
+}
+
+.card:focus-within .card__description {
+  z-index: auto;
+  background-color: $color-tangaroa;
+}
+
+.card__bg-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.card__background {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: $color-tangaroa;
+}
+
+.card__description {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 28px 25px 35px;
+  background-color: transparent;
+  z-index: -2;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  @include vp-1023 {
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+
+  @include vp-767 {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.card h3 {
+  position: absolute;
+  bottom: 23px;
+  left: 30px;
+  margin: 0;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 150%;
+  color: $color-alice-blue;
+
+  @include vp-1023 {
+    bottom: 28px;
+    left: 35px;
+  }
+
+  @include vp-767 {
+    bottom: 18px;
+    left: 25px;
+  }
+}
+
+.card p {
+  margin: 0;
+  margin-bottom: 13px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 150%;
+  color: $color-alice-blue;
+}
+
+.card dl {
+  margin: 0;
+}
+
+.card dt {
+  margin-bottom: 1px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: $color-alice-blue;
+}
+
+.card dd {
+  margin: 0;
+  margin-bottom: 11px;
+  font-size: 14px;
+  line-height: 20px;
+  color: $color-quartz;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.card__button {
+  margin-top: auto;
+  display: block;
+  padding: 10px;
+  padding-top: 9px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 150%;
+  text-align: center;
+  background-color: $color-alice-blue;
+  transition: background-color, box-shadow $trans-default;
+
+
+  @include hover-focus {
+    color: $color-alice-blue;
+    background-color: transparent;
+    box-shadow: 0 0 0 2px $color-alice-blue inset;
+  }
+}
