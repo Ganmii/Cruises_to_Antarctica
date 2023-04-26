@@ -94,12 +94,13 @@
 
 .booking p {
   margin: 0;
-  padding-right: 250px;
   font-size: 18px;
   line-height: 27px;
+  max-width: 352px;
 
   @include vp-1023 {
     padding: 0 20px;
+    max-width: 390px;
   }
 
   @include vp-767 {

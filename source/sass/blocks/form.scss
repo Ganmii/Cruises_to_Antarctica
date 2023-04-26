@@ -130,7 +130,7 @@
 
   @include hover-focus {
     color: $color-alice-blue;
-    background-color: transparent;
+    background-color: $color-tangaroa;
     box-shadow: 0 0 0 2px $color-alice-blue inset;
   }
 }
